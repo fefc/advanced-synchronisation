@@ -14,3 +14,7 @@ Go to your MultilingualPress settings page, enable the Advanced Synchronisation 
 
 ## Usage
 When updating a post or a page the publish date, categories and tags will be copied to the related translation if the corresponding categories and tags exists in the translated site. This feature works both while editing a post/page or trough quick edit.
+
+## Tested with
+Wordpress: 4.7
+MultilingualPress: 2.11.0
