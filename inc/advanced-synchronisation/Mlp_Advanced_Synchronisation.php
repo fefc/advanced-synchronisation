@@ -228,9 +228,11 @@ class Mlp_Advanced_Synchronisation implements Mlp_Updatable {
 		}
 	
 		//Check if we have a valid nonce_validator (which is added in post_submitbox_misc_actions)
-		if ( ! $this->nonce_validator->is_valid() ) {
+		//For some reason the nonce validator does not work in the quick edit nor in Gutenberg interface
+		//So for now we leave it out. This is a temporary solution.
+		/*if ( ! $this->nonce_validator->is_valid() ) {
 			return;
-		}
+		}*/
 
 		// We're only interested in published posts at this time
 		$post_status = get_post_status( $post_id );
