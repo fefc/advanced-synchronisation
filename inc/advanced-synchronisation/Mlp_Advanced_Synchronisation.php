@@ -302,8 +302,9 @@ class Mlp_Advanced_Synchronisation implements Mlp_Updatable {
 	 */
 	private function set_remote_publish_date( $new_id, $new_date ) {
 		
-		// Only update if remote post has already been published
-		if ( get_post_status ( $new_id ) == 'publish' ) {
+		// Only update if remote post has already been published or is draft
+		// If it is draft it will keep that date when published
+		if ( in_array( get_post_status ( $new_id ), array( 'publish', 'draft' ), true ) ) {
 			
 			// Prepare post array
 			$post = array(
